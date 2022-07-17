@@ -10,6 +10,6 @@ app.use(bodyParse.json());
 app.get('/', (req, res)=>{ return res.json('Salut') });
 
 app.post('/api/1.0/register', Register);
-app.post('/api/1.0/register', Login);
+app.post('/api/1.0/login', Login);
 
 module.exports = app;

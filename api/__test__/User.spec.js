@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../src/app');
 const mongoose = require('mongoose');
 
-beforeAll(async ()=>{
+beforeEach(async ()=>{
     await mongoose.connect(process.env.MONGO_URI)
 });
 
@@ -11,6 +11,11 @@ const newUser = {
         firstName: 'Mafouz',
         lastName: 'DIALLO',
         phone: '654181401',
+        password: '123456'
+    };
+
+const credentials = {
+        email: 'mafouzdiallo@gmail.com',
         password: '123456'
     };
 
@@ -40,3 +45,16 @@ describe('Users register', ()=>{
                });
    });
 });
+
+describe('Users login', ()=>{
+    
+    it('Return 200 OK when user login is succefull', (done)=>{
+         request(app).post('/api/1.0/login')
+                .send(credentials).then((response)=>{
+                    expect(response.status).toBe(200);
+                    done();
+                });
+    });
+});
+
+
