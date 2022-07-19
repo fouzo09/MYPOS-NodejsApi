@@ -23,9 +23,8 @@ const Login = async(req, res)=>{
         if(user && (await bcrypt.compare(password, user.password))){
             
             const token = jwt.sign({user_id: user._id, email}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN});
-            user.token = token;
             
-            return res.status(200).json(user);
+            return res.status(200).json({user, token: token});
         }
 
         return res.status(400).json('Utilisateur non trouvé');

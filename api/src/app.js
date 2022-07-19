@@ -1,15 +1,19 @@
 const express = require('express');
 const bodyParse = require('body-parser');
 const app = express();
-const { Register, Login } = require('./controllers/user');
+const router = require('./routes/routes');
+const api = require('./routes/api');
+const session = require('express-session');
+const passport = require('passport');
 require('dotenv').config();
-const PORT = 5000;
+require('./middleware/auth');
 
 app.use(bodyParse.json());
+app.use(session({secret: 'app'}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get('/', (req, res)=>{ return res.json('Salut') });
-
-app.post('/api/1.0/register', Register);
-app.post('/api/1.0/login', Login);
+app.use('/', router);
+app.use('/api', api);
 
 module.exports = app;
