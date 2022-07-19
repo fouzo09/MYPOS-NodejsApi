@@ -49,7 +49,7 @@ describe('Users register', ()=>{
 describe('Users login', ()=>{
     
     it('Return 200 OK when user login is succefull', (done)=>{
-         request(app).post('/api/1.0/login')
+         request(app).post('/api/1.0/auth')
                 .send(credentials).then((response)=>{
                     expect(response.status).toBe(200);
                     done();

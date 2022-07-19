@@ -4,7 +4,7 @@ const app = require('./src/app');
 require('dotenv').config();
 
 const PORT = 5000;
-process.title = 'Oauth2';
+process.title = 'MYPOS';
 
 mongoose.connect(process.env.MONGO_URI)
         .then(()=> app.listen(PORT))
