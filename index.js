@@ -3,7 +3,7 @@ const app = require('./src/app');
 
 require('dotenv').config();
 
-const PORT = 5000;
+const PORT = 5001;
 process.title = 'MYPOS';
 
 mongoose.connect(process.env.MONGO_URI)
