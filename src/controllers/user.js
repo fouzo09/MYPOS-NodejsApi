@@ -17,14 +17,14 @@ const Register = async(req, res)=>{
 const Login = async(req, res)=>{
 
     try{
-        const {email, password} = req.body;
+        const {email, password} = req.body;        
         const user = await User.findOne({email: email});
         
         if(user && (await bcrypt.compare(password, user.password))){
             
             const token = jwt.sign({user_id: user._id, email}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN});
-            
-            return res.status(200).json({user, token: token});
+            const authenticatedUser = {firstName: user.firstName, lastName: user.lastName, email: user.email, id: user.id};
+            return res.status(200).json({user: authenticatedUser, token: token});
         }
 
         return res.status(400).json('Utilisateur non trouvé');
