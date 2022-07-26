@@ -2,4 +2,8 @@
 
 C'est un ensemble de microservices fournissant des apis developpé en nodejs/expressjs.
 Les microservices disponibles:
-- [Services gateway]
+- Service gateway
+- Service authentification
+- Service categories
+- Service produits
+- Service vente
