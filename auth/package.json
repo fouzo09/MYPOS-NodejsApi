@@ -1,7 +1,7 @@
 {
-  "name": "oauth",
+  "name": "MYPOS",
   "version": "1.0.0",
-  "description": "Authentification avec Oauth2",
+  "description": "Authentification avec MYPOS",
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",

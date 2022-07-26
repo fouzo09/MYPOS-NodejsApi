@@ -1,0 +1,16 @@
+{
+    "services":{
+        "auth":{
+            "apiName": "auth",
+            "host": "http://localhost",
+            "port": "5001",
+            "url": "http://localhost:5001/auth"
+        },
+        "category":{
+            "apiName": "category",
+            "host": "http://localhost",
+            "port": "5001",
+            "url": "http://localhost:5003/category"
+        }
+    }
+}
