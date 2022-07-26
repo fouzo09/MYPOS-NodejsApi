@@ -1,8 +1,7 @@
 const Vente = require("../models/Vente.js");
 
 
-const createVente = (req, res)=>{
-    
+const createVente = (req, res)=>{    
    Vente.create(req.body)
              .then(result => res.status(200).json(result))
              .catch(error => res.status(500).json({message: error}));                
