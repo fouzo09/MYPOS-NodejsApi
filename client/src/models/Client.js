@@ -1,8 +1,15 @@
 const mongoose = require("mongoose");
 
 const ClientSchema = mongoose.Schema({
-    fullName: String,
-    telephone: String,
+    fullName: {
+        type: String,
+        require: [true, 'Le nom complet est obligatoire'],
+
+    },
+    telephone: {
+        type: String,
+        unique: [true, 'Ce numero de telephon est deja utilise']
+    },
     adresse: String
 });
 
