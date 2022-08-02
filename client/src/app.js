@@ -4,6 +4,6 @@ const clientRouter = require('../routes');
 
 const app = express();
 app.use(bodyParser.json());
-app.use("/client", clientRouter);
+app.use("/", clientRouter);
 
 module.exports = app;
