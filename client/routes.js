@@ -8,6 +8,7 @@ const {
         updateClient,
         deleteClient
     } = require('./src/controllers/client.js');
+
 clientRouter.get('/', getClients);
 clientRouter.get('/:clientID', getClient);
 clientRouter.post('/', createClient);
