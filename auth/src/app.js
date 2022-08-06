@@ -7,7 +7,6 @@ const passport = require('passport');
 const routes = require('./routes');
 
 require('dotenv').config();
-require('./middleware/auth');
 
 app.use(cors({
     origin: 'http://localhost:3000',
@@ -22,6 +21,6 @@ app.use(session({ secret: 'mypos',
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/api', routes);
+app.use('/', routes);
 
 module.exports = app;

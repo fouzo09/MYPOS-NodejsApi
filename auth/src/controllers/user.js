@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const User = require('../models/User');
 const SALT = 10;
 
 const Register = async(req, res)=>{
@@ -10,7 +10,7 @@ const Register = async(req, res)=>{
         const user = await User.create({...req.body, password: password});
         return res.status(200).json(user);
     } catch (error) {
-        return res.status(500).json(error);
+        return res.status(401).json(error);
     }
 }
 
@@ -29,7 +29,7 @@ const Login = async(req, res)=>{
 
         return res.status(400).json('Utilisateur non trouvé');
     }catch(error){
-        return res.status(500).json(error);
+        return res.status(401).json(error);
     }
 }
 
