@@ -1,5 +1,5 @@
 const productsConfig = {
-    "name": "Vente",
+    "name": "Sale",
     "port": 5005
 }
 

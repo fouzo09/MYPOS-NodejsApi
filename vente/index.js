@@ -1,5 +1,5 @@
 const app = require('./src/app');
-const venteConfig = require('../gateway/src/utils/vente.config');
+const venteConfig = require('../gateway/src/utils/sale.config');
 const mongoose = require("mongoose");
 
 const PORT = venteConfig.port;

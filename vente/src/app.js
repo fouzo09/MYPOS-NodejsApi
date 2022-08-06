@@ -4,6 +4,6 @@ const venteRouter = require('../routes');
 
 const app = express();
 app.use(bodyParser.json());
-app.use("/vente", venteRouter);
+app.use("/", venteRouter);
 
 module.exports = app;

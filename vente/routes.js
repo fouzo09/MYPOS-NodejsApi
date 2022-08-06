@@ -1,17 +1,17 @@
 const express = require("express");
-const venteRouter = express.Router();
+const saleRouter = express.Router();
 
 const { 
-        createVente,
-        getVentes,
-        getVente,
-        updateVente,
-        deleteVente
-    } = require('./src/controllers/vente.js');
-venteRouter.get('/', getVentes);
-venteRouter.get('/:venteID', getVente);
-venteRouter.post('/', createVente);
-venteRouter.put('/:venteID', updateVente);
-venteRouter.delete('/:venteID', deleteVente);
+        createSale,
+        getSales,
+        getSale,
+        updateSale,
+        deleteSale
+    } = require('./src/controllers/sale.js');
+saleRouter.get('/', getSales);
+saleRouter.get('/:saleID', getSale);
+saleRouter.post('/', createSale);
+saleRouter.put('/:saleID', updateSale);
+saleRouter.delete('/:saleID', deleteSale);
 
-module.exports = venteRouter;
+module.exports = saleRouter;
