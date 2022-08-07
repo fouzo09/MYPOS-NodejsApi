@@ -1,6 +1,6 @@
 const categoryConfig = {
     "name": "Category",
-    "port": 5003
+    "port": 5002
 }
 
 module.exports = categoryConfig;

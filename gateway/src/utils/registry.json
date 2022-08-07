@@ -2,15 +2,33 @@
     "services":{
         "auth":{
             "apiName": "auth",
-            "host": "http://localhost",
+            "host": "http://127.0.0.1",
             "port": "5001",
-            "url": "http://localhost:5001/auth"
+            "url": "http://127.0.0.1:5001/auth"
         },
         "category":{
             "apiName": "category",
-            "host": "http://localhost",
-            "port": "5001",
-            "url": "http://localhost:5003/category"
+            "host": "http://127.0.0.1",
+            "port": "5002",
+            "url": "http://127.0.0.1:5002"
+        },
+        "client":{
+            "apiName": "client",
+            "host": "http://127.0.0.1",
+            "port": "5003",
+            "url": "http://127.0.0.1:5003"
+        },
+        "product":{
+            "apiName": "product",
+            "host": "http://127.0.0.1",
+            "port": "5004",
+            "url": "http://127.0.0.1:5004"
+        },
+        "sale":{
+            "apiName": "sale",
+            "host": "http://127.0.0.1",
+            "port": "5005",
+            "url": "http://127.0.0.1:5005"
         }
     }
 }

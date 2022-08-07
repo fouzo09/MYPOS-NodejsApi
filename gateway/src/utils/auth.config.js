@@ -1,6 +1,6 @@
 const authConfig = {
     "name": "Auth",
-    "port": 5002
+    "port": 5001
 }
 
 module.exports = authConfig;

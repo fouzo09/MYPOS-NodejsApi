@@ -1,4 +1,3 @@
-const express = require("express");
 const mongoose = require("mongoose");
 const app = require('./src/app');
 const categoryConfig = require('../gateway/src/utils/category.config');
