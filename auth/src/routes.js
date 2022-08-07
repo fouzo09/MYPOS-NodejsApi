@@ -3,7 +3,7 @@ const router = express.Router();
 const { Register, Login } = require('./controllers/user');
 
 router.post('/register', Register);
-router.post('/auth', Login);
+router.post('/login', Login);
 router.get('/logout', (req, res)=>{ 
     req.logout(function(err) {
         if (err) { return next(err); }

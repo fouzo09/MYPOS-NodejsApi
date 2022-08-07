@@ -2,12 +2,14 @@ const express = require('express');
 const axios = require('axios');
 const routes = express.Router();
 const registry = require('./utils/registry.json');
+const isAuthenticated = require('./middleware/auth.middleware');
 
-routes.all('/:apiName/:path?', async(req, res)=>{
+routes.all('/:apiName/:path?', isAuthenticated, async(req, res)=>{
 
     try {
+
         if(!registry.services[req.params.apiName]) 
-            return res.status(401).json('L\'API n\'existe pas.');
+            return res.status(401).json('Ce service n\'existe pas.');
         
         const { method, headers, body: data } = req;
         const url = getUrl(req.params);
