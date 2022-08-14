@@ -1,10 +1,21 @@
+const amqpConnect = require('../events/connect');
 const Sale = require("../models/Sale.js");
 
-
-const createSale = (req, res)=>{    
-   Sale.create(req.body)
-             .then(result => res.status(200).json(result))
-             .catch(error => res.status(401).json({message: error}));                
+const createSale = async(req, res)=>{  
+   const channel = await amqpConnect();
+   try {
+      const savedSale = await Sale.create(req.body);
+      if(!savedSale._id) throw new Error();
+      channel.sendToQueue(
+         'commande',
+         Buffer.from(
+            JSON.stringify(req.body.products),
+         ),
+      );
+      res.status(200).json(savedSale);
+   } catch (error) {
+      res.status(401).json(error);
+   }               
 }
 
 const getSales = (req, res)=>{

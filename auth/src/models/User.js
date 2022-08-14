@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const UserSchema = mongoose.Schema({
     email: {
         type: String,
-        required: [true, 'L\'email de l\'utilisateur est obligatoire.']
+        required: [true, 'L\'email de l\'utilisateur est obligatoire.'],
+        unique: [true,  'Cette addrese email existe deja.']
     },
     firstName: {
         type: String,
@@ -15,7 +16,8 @@ const UserSchema = mongoose.Schema({
     },
     phone: {
         type: String,
-        required: [true, 'Le numero de telephone de l\'utilisateur est obligatoire.']
+        required: [true, 'Le numero de telephone de l\'utilisateur est obligatoire.'],
+        unique: [true,  'Ce numero de telephone existe deja.']
     }, 
     password: {
         type: String,

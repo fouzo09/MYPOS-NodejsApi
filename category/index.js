@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const app = require('./src/app');
-const categoryConfig = require('../gateway/src/utils/category.config');
+const categoryConfig = require('./shared/utils/category.config');
 require('dotenv').config();
 
 const PORT = categoryConfig.port;

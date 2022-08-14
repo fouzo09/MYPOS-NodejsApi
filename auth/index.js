@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const app = require('./src/app');
-const authConfig = require('../gateway/src/utils/auth.config');
+const authConfig = require('./shared/utils/auth.config');
 require('dotenv').config();
 
 const PORT = authConfig.port;

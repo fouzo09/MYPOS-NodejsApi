@@ -7,7 +7,7 @@ const isAuthenticated = require('./middleware/auth.middleware');
 routes.all('/:apiName/:path?', isAuthenticated, async(req, res)=>{
 
     try {
-
+        
         if(!registry.services[req.params.apiName]) 
             return res.status(401).json('Ce service n\'existe pas.');
         

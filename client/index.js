@@ -1,5 +1,5 @@
 const app = require('./src/app');
-const clientConfig = require('../gateway/src/utils/client.config');
+const clientConfig = require('./shared/utils/client.config');
 const mongoose = require("mongoose");
 
 const PORT = clientConfig.port;

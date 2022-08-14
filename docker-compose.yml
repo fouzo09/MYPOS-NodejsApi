@@ -1,0 +1,99 @@
+version: '3.9'
+
+services:
+
+#MongoDB service
+
+  mongo_db:
+    container_name: db_container
+    image: mongo:latest
+    restart: always
+    volumes:
+      - db_volume:/data/db
+
+#APIs services
+  gateway_api:
+    container_name: gateway_api
+    build: ./gateway
+    ports:
+      - 5000:5000
+    volumes:
+      - ./shared:/usr/src/app/shared:ro
+    environment:
+      PORT: 5000
+      MONGO_URI: mongodb://mongo_db:27017/MYPOS
+    depends_on:
+      - mongo_db
+  
+  auth_api:
+    container_name: auth_api
+    build: ./auth
+    ports:
+      - 5001:5001
+    volumes:
+      - ./shared:/usr/src/app/shared:ro
+    environment:
+      PORT: 5001
+      MONGO_URI: mongodb://mongo_db:27017/MYPOS
+    depends_on:
+      - mongo_db
+      - gateway_api
+  
+  category_api:
+    container_name: category_api
+    build: ./category
+    ports:
+      - 5002:5002
+    volumes:
+      - ./shared:/usr/src/app/shared:ro
+    environment:
+      PORT: 5002
+      MONGO_URI: mongodb://mongo_db:27017/MYPOS
+    depends_on:
+      - mongo_db
+      - gateway_api
+  
+  client_api:
+    container_name: client_api
+    build: ./client
+    ports:
+      - 5003:5003
+    volumes:
+      - ./shared:/usr/src/app/shared:ro
+    environment:
+      PORT: 5003
+      MONGO_URI: mongodb://mongo_db:27017/MYPOS
+    depends_on:
+      - mongo_db
+      - gateway_api
+  
+  product_api:
+    container_name: product_api
+    build: ./product
+    ports:
+      - 5004:5004
+    volumes:
+      - ./shared:/usr/src/app/shared:ro
+    environment:
+      PORT: 5004
+      MONGO_URI: mongodb://mongo_db:27017/MYPOS
+    depends_on:
+      - mongo_db
+      - gateway_api
+  
+  sale_api:
+    container_name: sale_api
+    build: ./sale
+    ports:
+      - 5005:5005
+    volumes:
+      - ./shared:/usr/src/app/shared:ro
+    environment:
+      PORT: 5005
+      MONGO_URI: mongodb://mongo_db:27017/MYPOS
+    depends_on:
+      - mongo_db
+      - gateway_api
+
+volumes:
+  db_volume: {}
