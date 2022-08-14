@@ -9,12 +9,12 @@ auth/.env
 category/.env
 client/.env
 gateway/.env
-products/.env
+product/.env
 sale/.env
 
 auth/package-lock.json
 category/package-lock.json
 client/package-lock.json
 gateway/package-lock.json
-products/package-lock.json
+product/package-lock.json
 sale/package-lock.json
