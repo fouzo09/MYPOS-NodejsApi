@@ -1,23 +1,23 @@
-auth/node_modules
-category/node_modules
-client/node_modules
-gateway/node_modules
-product/node_modules
-sale/node_modules
+app/auth/node_modules
+app/category/node_modules
+app/client/node_modules
+app/gateway/node_modules
+app/product/node_modules
+app/sale/node_modules
 
-auth/.env
-category/.env
-client/.env
-gateway/.env
-product/.env
-sale/.env
+app/auth/.env
+app/category/.env
+app/client/.env
+app/gateway/.env
+app/product/.env
+app/sale/.env
 
-auth/package-lock.json
-category/package-lock.json
-client/package-lock.json
-gateway/package-lock.json
-product/package-lock.json
-sale/package-lock.json
+app/auth/package-lock.json
+app/category/package-lock.json
+app/client/package-lock.json
+app/gateway/package-lock.json
+app/product/package-lock.json
+app/sale/package-lock.json
 
 
 vagrant/.vagrant
